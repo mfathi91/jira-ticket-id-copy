@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Jira Ticket ID Copy",
+  "version": "1.0",
+
+  "description": "Quick copy of the Jira ticket ID from the URL to the clipboard.",
+
+  "icons": {
+    "48": "icons/extension.png"
+  },
+
+  "permissions": [
+      "activeTab",
+      "clipboardWrite"
+  ], 
+
+  "browser_action": {
+    "default_icon": "icons/extension.png",
+    "default_title": "Jira Ticket ID Copy"
+  },
+
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
